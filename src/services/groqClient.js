@@ -1,7 +1,7 @@
 import Groq from "groq-sdk";
 import dotenv from "dotenv";
-import PROMPT from "../prompt";
-import GUIDELINES from "../guidlines";
+import PROMPT from "../prompt.js";
+import GUIDELINES from "../guidlines.js";
 dotenv.config();
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
