@@ -1,22 +1,18 @@
 {
-  "name": "node-express-api-ts",
-  "description": "Simple api sample in Node",
-  "version": "1.0.0",
-  "private": true,
-  "main": "index.js",
+  "name": "ai-code-reviewer-backend",
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon --watch 'src/**' --ext 'ts,json' --exec 'npm run build && npm run start'",
-    "build": "tsc",
-    "start": "node dist/index.js"
+    "dev": "ts-node src/index.js",
+    "build": "tsc"
   },
-  "author": "Google LLC",
-  "license": "Apache-2.0",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "groq-sdk": "^0.3.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0",
-    "typescript": "^5.4.5",
-    "@types/node": "^20.12.12"
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.2"
   }
 }
