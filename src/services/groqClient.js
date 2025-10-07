@@ -1,22 +1,20 @@
 import Groq from "groq-sdk";
 import dotenv from "dotenv";
-import fs from "fs";
-import path from "path";
+import PROMPT from "../prompt";
+import GUIDELINES from "../guidlines";
 dotenv.config();
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 export async function getAIReview(pr_diff, repo_context) {
-  const promptTemplate = fs.readFileSync(path.join(__dirname, "../../ai/prompt-template.md"), "utf-8");
-  const guidelines = fs.readFileSync(path.join(__dirname, "../../ai/company-guidelines.md"), "utf-8");
-
+  
   const fullPrompt = `
-${promptTemplate}
+${PROMPT}
 
 ---
 Repository Context: ${repo_context || "N/A"}
 Company Guidelines:
-${guidelines}
+${GUIDELINES}
 
 Pull Request Diff:
 ${pr_diff}
