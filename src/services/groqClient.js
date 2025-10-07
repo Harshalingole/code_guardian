@@ -21,7 +21,7 @@ ${pr_diff}
 `;
 
   const response = await groq.chat.completions.create({
-    model: "mixtral-8x7b-32768", // or any LLM model you prefer
+    model: "llama-3.3-70b-versatile",
     messages: [{ role: "user", content: fullPrompt }],
   });
 
